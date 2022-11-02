@@ -4,7 +4,7 @@ import Products.Products;
 
 import java.util.*;
 
-public class Recipes {
+public  class Recipes {
     private String nameOfRecipe;
     private List<Products> products = new ArrayList<Products>();
     private double totalCostRecipe;

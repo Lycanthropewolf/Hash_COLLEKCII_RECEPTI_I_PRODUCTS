@@ -1,7 +1,7 @@
 package Recipes;
 
-import java.util.HashSet;
-import java.util.Set;
+import  java.util.HashSet;
+import  java.util.Set;
 
 public class RecipeCollection {
     public static Set<Recipes> recipes = new HashSet<>();
