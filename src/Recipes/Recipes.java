@@ -6,7 +6,7 @@ import java.util.*;
 
 public  class Recipes {
     private String nameOfRecipe;
-    private List<Products> products = new ArrayList<Products>();
+    private List<Products> products = new ArrayList<>();
     private double totalCostRecipe;
 
     public Recipes(String nameOfRecipe) {
@@ -25,7 +25,7 @@ public  class Recipes {
 
     @Override
     public String toString() {
-        return "Рецепт" + nameOfRecipe ;
+        return "Рецепт" +" "+ nameOfRecipe ;
     }
 
     @Override
