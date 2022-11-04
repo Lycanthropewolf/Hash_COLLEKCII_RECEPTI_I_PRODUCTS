@@ -20,26 +20,26 @@ public class ProductsList {
         }
     }
 
-    public static boolean removeProductOnList(String nameToRemove) {
+    public static boolean removeProductOnList(Products removeProducts) {
         for (int i = 0; i < productsList.size(); i++) {
-            if (productsList.get(i).getName().equals(nameToRemove)) {
+            if (productsList.get(i).equals(removeProducts)) {
                 productsList.remove(i);
-                System.out.println(nameToRemove + " удален из множества");
+                System.out.println(removeProducts.getName() + " удален из множества");
                 return true;
             }
         }
-        System.out.println(" Продукт " + nameToRemove + " не найден в множестве");
+        System.out.println(" Продукт " + removeProducts.getName() + " не найден в множестве");
         return false;
     }
 
-    public static boolean checkProductInList(String nameToCheck) {
+    public static boolean checkProductInList(Products checkProducts) {
         for (Products products : productsList) {
-            if (products.getName().equals(nameToCheck)) {
-                System.out.println(nameToCheck + " уже куплен!");
+            if (products.equals(checkProducts)) {
+                System.out.println(checkProducts.getName() + " уже куплен!");
                 return false;
             }
         }
-        System.out.println(nameToCheck + " еще не куплен");
+        System.out.println(checkProducts.getName() + " еще не куплен");
         return true;
     }
 

@@ -2,8 +2,6 @@ package Products;
 
 import java.util.Objects;
 
-import static Products.ProductsList.addProductToList;
-
 public class Products {
     private String name;
     private double price;
@@ -17,8 +15,6 @@ public class Products {
             this.name = name;
             this.price = price;
             this.count = count;
-            addProductToList(this);
-
         }
     }
 
@@ -35,12 +31,12 @@ public class Products {
         if (this == o) return true;
         if (!(o instanceof Products)) return false;
         Products products = (Products) o;
-        return Double.compare(products.price, price) == 0 && Objects.equals(name, products.name);
+        return Objects.equals(name, products.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, price);
+        return Objects.hash(name);
     }
 
     public String getName() {

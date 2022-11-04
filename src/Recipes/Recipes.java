@@ -6,7 +6,7 @@ import java.util.*;
 
 public  class Recipes {
     private String nameOfRecipe;
-    private List<Products> products = new ArrayList<>();
+    private Set<Products> products = new HashSet<>();
     private double totalCostRecipe;
 
     public Recipes(String nameOfRecipe) {
@@ -33,19 +33,19 @@ public  class Recipes {
         if (this == o) return true;
         if (!(o instanceof Recipes)) return false;
         Recipes recipes = (Recipes) o;
-        return Double.compare(recipes.totalCostRecipe, totalCostRecipe) == 0 && nameOfRecipe.equals(recipes.nameOfRecipe) && products.equals(recipes.products);
+        return nameOfRecipe.equals(recipes.nameOfRecipe);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameOfRecipe, products, totalCostRecipe);
+        return Objects.hash(nameOfRecipe);
     }
 
     public String getNameOfRecipe() {
         return nameOfRecipe;
     }
 
-    public List<Products> getProducts() {
+    public Set<Products> getProducts() {
         return products;
     }
 
