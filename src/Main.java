@@ -25,6 +25,8 @@ public class Main {
         addRecipe(recipes1);
         addRecipe(recipes2);
         printAllRecipes();
+        recipes2.addProductInRecipe(products1,-4);
+
 
     }
 

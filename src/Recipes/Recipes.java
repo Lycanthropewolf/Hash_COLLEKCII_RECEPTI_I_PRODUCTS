@@ -6,21 +6,31 @@ import java.util.*;
 
 public  class Recipes {
     private String nameOfRecipe;
-    private Set<Products> products = new HashSet<>();
-    private double totalCostRecipe;
+    private Map<Products,Integer> products = new HashMap<>();
+
 
     public Recipes(String nameOfRecipe) {
         this.nameOfRecipe = nameOfRecipe;
-        this.totalCostRecipe = 0;
+
 
     }
 
     public void addProductInRecipe(Products product, int requiredQuantiti) {
-        if (products.contains(product)) {
-            throw new RuntimeException(" Продукт уже добавлен в рецепт");
+        if (products.containsKey(product)){
+            throw new RuntimeException(" Такой продукт есть");
+        }else if (requiredQuantiti<1){
+            products.put(product,1);
+        }else {
+            products.put(product,requiredQuantiti);
         }
-        products.add(product);
-        totalCostRecipe = totalCostRecipe + product.getPrice() * requiredQuantiti;
+
+    }
+    public double getCostForProduct(){
+        double sum =0;
+        for (Products key: products.keySet()){
+            sum+=products.get(key)* key.getPrice();
+        }
+        return sum;
     }
 
     @Override
@@ -45,11 +55,8 @@ public  class Recipes {
         return nameOfRecipe;
     }
 
-    public Set<Products> getProducts() {
+    public Map<Products,Integer> getProducts() {
         return products;
     }
 
-    public double getTotalCostRecipe() {
-        return totalCostRecipe;
-    }
 }
