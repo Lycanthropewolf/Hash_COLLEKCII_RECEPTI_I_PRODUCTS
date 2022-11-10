@@ -2,13 +2,13 @@ package Products;
 
 import java.util.Objects;
 
-public class Products {
+public class Product {
     private String name;
     private double price;
     private int count;
 
 
-    public Products(String name, double price, int count) {
+    public Product(String name, double price, int count) {
         if (name == null && name.isBlank() && name.isEmpty() && price < 0 && count < 0) {
             throw new RuntimeException("Заполните карточку товара " + name + " корректно");
         } else {
@@ -21,16 +21,16 @@ public class Products {
 
     @Override
     public String toString() {
-        return "Продукт" + name + " " +
-                "стоит -" + price +
-                " рублей";
+        return "Продукт - " + name + " " +
+                "стоит - " + price +
+                " рублей. ";
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Products)) return false;
-        Products products = (Products) o;
+        if (!(o instanceof Product)) return false;
+        Product products = (Product) o;
         return Objects.equals(name, products.name);
     }
 

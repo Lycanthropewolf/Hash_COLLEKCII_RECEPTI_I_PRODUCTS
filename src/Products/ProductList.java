@@ -3,16 +3,16 @@ package Products;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductsList {
+public class ProductList {
 
 
-    public static List<Products> productsList = new ArrayList<>();
+    public static List<Product> productsList = new ArrayList<>();
 
     public static void printListOfProduct() {
         System.out.println(productsList);
     }
 
-    public static void addProductToList(Products newProduct) {
+    public static void addProductToList(Product newProduct) {
         if (!productsList.contains(newProduct)) {
             productsList.add(newProduct);
         } else {
@@ -20,20 +20,20 @@ public class ProductsList {
         }
     }
 
-    public static boolean removeProductOnList(Products removeProducts) {
+    public static boolean removeProductOnList(Product removeProduct) {
         for (int i = 0; i < productsList.size(); i++) {
-            if (productsList.get(i).equals(removeProducts)) {
+            if (productsList.get(i).equals(removeProduct)) {
                 productsList.remove(i);
-                System.out.println(removeProducts.getName() + " удален из множества");
+                System.out.println(removeProduct.getName() + " удален из множества");
                 return true;
             }
         }
-        System.out.println(" Продукт " + removeProducts.getName() + " не найден в множестве");
+        System.out.println(" Продукт " + removeProduct.getName() + " не найден в множестве");
         return false;
     }
 
-    public static boolean checkProductInList(Products checkProducts) {
-        for (Products products : productsList) {
+    public static boolean checkProductInList(Product checkProducts) {
+        for (Product products : productsList) {
             if (products.equals(checkProducts)) {
                 System.out.println(checkProducts.getName() + " уже куплен!");
                 return false;
@@ -44,7 +44,7 @@ public class ProductsList {
     }
 
 
-    public static List<Products> getProductsList() {
+    public static List<Product> getProductsList() {
         return productsList;
     }
 

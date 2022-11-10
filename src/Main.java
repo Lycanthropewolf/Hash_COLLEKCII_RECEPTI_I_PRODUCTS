@@ -1,31 +1,34 @@
-import Products.Products;
-import Recipes.Recipes;
+import Products.Product;
+import Recipes.Recipe;
 
-import static Products.ProductsList.*;
+import static Products.ProductList.*;
 import static Recipes.RecipeCollection.addRecipe;
 import static Recipes.RecipeCollection.printAllRecipes;
 
 public class Main {
     public static void main(String[] args) {
-        Recipes recipes1 = new Recipes("Шарлотка");
-        Recipes recipes2 = new Recipes("Борщ");
-        Products products1 = new Products("Капуста", 13.99, 5);
-        Products products2 = new Products(" картошка", 12.20, 10);
-        addProductToList(products2);
-        addProductToList(products1);
+        Recipe sharlotka = new Recipe("Шарлотка");
+        Recipe borsh = new Recipe("Борщ");
+        Product kapusta = new Product("Капуста", 13.99, 5);
+        Product kartoha = new Product(" картошка", 12.20, 10);
+        addProductToList(kartoha);
+        addProductToList(kapusta);
         printListOfProduct();
-        removeProductOnList(products1);
+        removeProductOnList(kapusta);
         printListOfProduct();
-        addProductToList(products1);
+        addProductToList(kapusta);
         printListOfProduct();
-        checkProductInList(products2);
-        checkProductInList(products1);
-        recipes2.addProductInRecipe(products1, 23);
-        recipes2.addProductInRecipe(products2, 14);
-        addRecipe(recipes1);
-        addRecipe(recipes2);
+        checkProductInList(kartoha);
+        checkProductInList(kapusta);
+        borsh.addProductInRecipe(kapusta, 23);
+        borsh.addProductInRecipe(kartoha, -4);
+        System.out.println();
+        addRecipe(sharlotka);
+        addRecipe(borsh);
         printAllRecipes();
-        recipes2.addProductInRecipe(products1,-4);
+        System.out.println(Recipe.products);
+        sharlotka.addProductInRecipe(kapusta,-4);;
+
 
 
     }
