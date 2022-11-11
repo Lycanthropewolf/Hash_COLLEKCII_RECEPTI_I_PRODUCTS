@@ -20,8 +20,8 @@ public class ProductList {
     }
 
     public static boolean removeProductOnList(Product removeProduct) {
-        for (int i = 0; i < productsList.size(); i++) {
-            if (productsList.contains(removeProduct)) {
+        for (Product products : productsList) {
+            if (products.equals(removeProduct)) {
                 productsList.remove(removeProduct);
                 System.out.println(removeProduct.getName() + " удален из множества");
                 return true;
