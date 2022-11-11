@@ -2,8 +2,6 @@ import Products.Product;
 import Recipes.Recipe;
 
 import static Products.ProductList.*;
-import static Recipes.RecipeCollection.addRecipe;
-import static Recipes.RecipeCollection.printAllRecipes;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +9,7 @@ public class Main {
         Recipe borsh = new Recipe("Борщ");
         Product kapusta = new Product("Капуста", 13.99, 5);
         Product kartoha = new Product(" картошка", 12.20, 10);
-        addProductToList(kartoha);
+        /*addProductToList(kartoha);
         addProductToList(kapusta);
         printListOfProduct();
         removeProductOnList(kapusta);
@@ -25,11 +23,18 @@ public class Main {
         System.out.println();
         addRecipe(sharlotka);
         addRecipe(borsh);
-        printAllRecipes();
+        System.out.println(RecipeCollection.recipes);
         System.out.println(Recipe.products);
         sharlotka.addProductInRecipe(kapusta,-4);;
-
-
+        printAllRecipes();*/
+        addProductToList(kapusta);
+        printListOfProduct();
+        addProductToList(kartoha);
+        printListOfProduct();
+        removeProductOnList(kapusta);
+        printListOfProduct();
+        checkProductInList(kapusta);
+        checkProductInList(kartoha);
 
     }
 

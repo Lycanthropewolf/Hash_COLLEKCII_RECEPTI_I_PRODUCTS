@@ -1,12 +1,11 @@
 package Products;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 
 public class ProductList {
 
 
-    public static List<Product> productsList = new ArrayList<>();
+    public static HashSet<Product> productsList = new HashSet<>();
 
     public static void printListOfProduct() {
         System.out.println(productsList);
@@ -22,8 +21,8 @@ public class ProductList {
 
     public static boolean removeProductOnList(Product removeProduct) {
         for (int i = 0; i < productsList.size(); i++) {
-            if (productsList.get(i).equals(removeProduct)) {
-                productsList.remove(i);
+            if (productsList.contains(removeProduct)) {
+                productsList.remove(removeProduct);
                 System.out.println(removeProduct.getName() + " удален из множества");
                 return true;
             }
@@ -44,7 +43,7 @@ public class ProductList {
     }
 
 
-    public static List<Product> getProductsList() {
+    public static HashSet<Product> getProductsList() {
         return productsList;
     }
 

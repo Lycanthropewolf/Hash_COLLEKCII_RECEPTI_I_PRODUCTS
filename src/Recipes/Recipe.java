@@ -22,14 +22,14 @@ public class Recipe {
             throw new RuntimeException(" Такой продукт есть");
         } else if (requiredQuantiti <= 0) {
             requiredQuantiti = 1;
-            products.put(product, requiredQuantiti);
-        } else {
-            products.put(product, requiredQuantiti);
+
         }
+            products.put(product, requiredQuantiti);
+
 
     }
 
-    public double getCostForProduct() {
+    public double getCostForRecipe() {
         double sum = 0;
         for (Product key : products.keySet()) {
             sum += products.get(key) * key.getPrice();
