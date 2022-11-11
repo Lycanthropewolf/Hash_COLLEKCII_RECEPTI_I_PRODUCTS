@@ -1,14 +1,14 @@
 package Recipes;
 
-import java.util.HashSet;
-import java.util.Set;
+import  java.util.HashSet;
+import  java.util.Set;
 
 public class RecipeCollection {
-    public static Set<Recipes> recipes = new HashSet<>();
+    public static Set<Recipe> recipes = new HashSet<>();
 
-    public static void addRecipe(Recipes recipe) {
+    public static void addRecipe(Recipe recipe) {
         for (var recipeInCollection: recipes){
-            if (recipeInCollection.getNameOfRecipe().equals(recipe.getNameOfRecipe())){
+            if (recipeInCollection.equals(recipe)){
                 throw new RuntimeException(" Такой рецепт есть");
             }
         }

@@ -1,23 +1,41 @@
-import Products.Products;
-import Recipes.Recipes;
+import Products.Product;
+import Recipes.Recipe;
 
-import static Products.ProductsList.*;
-import static Recipes.RecipeCollection.addRecipe;
-import static Recipes.RecipeCollection.printAllRecipes;
+import static Products.ProductList.*;
 
 public class Main {
     public static void main(String[] args) {
-        Recipes recipes1 = new Recipes(" Шарлотка");
-        Recipes recipes2 = new Recipes("Борщ");
-        Products products1 = new Products("Капуста", 13.99, 5);
-        Products products2 = new Products(" картошка", 12.20, 10);
-        removeProductOnList("Капуста");
+        Recipe sharlotka = new Recipe("Шарлотка");
+        Recipe borsh = new Recipe("Борщ");
+        Product kapusta = new Product("Капуста", 13.99, 5);
+        Product kartoha = new Product(" картошка", 12.20, 10);
+        /*addProductToList(kartoha);
+        addProductToList(kapusta);
         printListOfProduct();
-        checkProductInList(" картошка");
-        recipes2.addProductInRecipe(products1, 23);
-        recipes2.addProductInRecipe(products2, 14);
-        addRecipe(recipes1);
-        printAllRecipes();
+        removeProductOnList(kapusta);
+        printListOfProduct();
+        addProductToList(kapusta);
+        printListOfProduct();
+        checkProductInList(kartoha);
+        checkProductInList(kapusta);
+        borsh.addProductInRecipe(kapusta, 23);
+        borsh.addProductInRecipe(kartoha, -4);
+        System.out.println();
+        addRecipe(sharlotka);
+        addRecipe(borsh);
+        System.out.println(RecipeCollection.recipes);
+        System.out.println(Recipe.products);
+        sharlotka.addProductInRecipe(kapusta,-4);;
+        printAllRecipes();*/
+        addProductToList(kapusta);
+        printListOfProduct();
+        addProductToList(kartoha);
+        printListOfProduct();
+        removeProductOnList(kapusta);
+        printListOfProduct();
+        checkProductInList(kapusta);
+        checkProductInList(kartoha);
+
     }
 
 }
